@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { LoginFormComponent } from './login-form.component';
+import { ButtonModule } from 'src/app/shared/components/button/button.module';
 
 @NgModule({
   declarations: [LoginFormComponent],
@@ -16,6 +17,7 @@ import { LoginFormComponent } from './login-form.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    ButtonModule,
   ],
   exports: [LoginFormComponent],
 })

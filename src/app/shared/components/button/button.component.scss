@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+button {
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  transition: 0.3s;
+}
+
+.disabledButton {
+  pointer-events: none;
+  cursor: default;
+  color: $color-disabled !important;
+  background-color: $color-disabled-background !important;
+}

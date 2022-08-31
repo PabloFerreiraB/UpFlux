@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+<form class="form" [formGroup]="form">
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
     <input
@@ -48,12 +48,10 @@
     >
   </mat-form-field>
 
-  <button
-    color="primary"
-    mat-raised-button
-    type="submit"
+  <app-button
     [disabled]="form.invalid"
+    [buttonConfig]="buttonConfig"
+    (clickEmitter)="onSubmit()"
   >
-    Entrar
-  </button>
+  </app-button>
 </form>

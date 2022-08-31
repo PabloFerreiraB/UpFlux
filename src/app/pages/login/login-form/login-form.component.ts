@@ -12,6 +12,25 @@ export class LoginFormComponent implements OnInit {
   hidePassword = true;
   @Output() submitForm = new EventEmitter<LoginForm>();
 
+  buttonConfig = {
+    styles: {
+      cursor: 'pointer',
+      position: 'relative',
+      backgroundColor: '#007dfe',
+      color: '#fff',
+      fontFamily: 'Roboto',
+      fontSize: '14px',
+      fontWeight: '500',
+      lineHeight: '16px',
+      borderRadius: '4px',
+      border: 'none',
+      padding: '10px 15px',
+      marginTop: '4px',
+      width: '100%',
+    },
+    text: 'entrar',
+  };
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -36,5 +55,10 @@ export class LoginFormComponent implements OnInit {
     if (this.form.valid) {
       this.submitForm.emit(this.form.value);
     }
+  }
+
+  onSubmit(): void {
+    if (this.form.valid)
+      this.submitForm.emit(this.form.getRawValue() as LoginForm);
   }
 }
