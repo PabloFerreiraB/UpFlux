@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
     styles: {
       cursor: 'pointer',
       position: 'relative',
-      backgroundColor: '#007dfe',
+      backgroundColor: '#0099dc',
       color: '#fff',
       fontFamily: 'Roboto',
       fontSize: '14px',

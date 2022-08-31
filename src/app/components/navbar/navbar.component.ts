@@ -7,5 +7,5 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent {
   @Output() logout = new EventEmitter<void>();
-  avatarImagePath = '';
+  avatarImagePath = 'assets/images/avatar.svg';
 }
