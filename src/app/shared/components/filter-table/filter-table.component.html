@@ -20,6 +20,7 @@
       </button>
     </div>
     <mat-paginator
+      showFirstLastButtons
       [pageSizeOptions]="pageSizeOptions"
       [pageSize]="searchParams._limit"
       [length]="total$ | async"

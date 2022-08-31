@@ -1,0 +1,20 @@
+<div class="detail-container">
+  <h1 mat-dialog-title>Detalhes do paciente</h1>
+  <div mat-dialog-content>
+    <div class="data">
+      <span>Nome: {{ patient.name }}</span>
+      <span>Usuário: {{ patient.username }}</span>
+      <span>E-mail: {{ patient.email }}</span>
+    </div>
+  </div>
+
+  <button
+    id="back"
+    type="button"
+    color="secondary"
+    mat-raised-button
+    onclick="history.back()"
+  >
+    < Voltar para listagem
+  </button>
+</div>

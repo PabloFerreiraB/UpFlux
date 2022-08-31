@@ -14,5 +14,6 @@
     [patients]="appListData.dataSource$ | async"
     (edit)="openFormModal($event)"
     (delete)="openDeleteModal($event)"
+    (detail)="onDetail($event)"
   ></app-table>
 </div>

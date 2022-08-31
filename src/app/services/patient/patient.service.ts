@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class PatientService implements ListDataApi<Patient> {
-  private readonly baseURL = 'tasks';
+  private readonly baseURL = 'patients';
 
   constructor(private http: HttpClient) {}
 

@@ -18,6 +18,7 @@ export class TableComponent implements SortEmitter {
   @Output() sortChange = new EventEmitter<Sort>();
   @Output() edit = new EventEmitter<Patient>();
   @Output() delete = new EventEmitter<Patient>();
+  @Output() detail = new EventEmitter<Patient>();
 
   readonly displayedColumns: string[] = ['name', 'email', 'actions'];
 }

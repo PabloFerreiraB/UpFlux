@@ -10,6 +10,8 @@ import { ListDataDirective } from 'src/app/shared/list-data/directives/list-data
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { PatientService } from 'src/app/services/patient/patient.service';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/core/storage/services/local-storage.service';
 
 @Component({
   selector: 'app-patients',
@@ -22,7 +24,9 @@ export class PatientsComponent {
 
   constructor(
     private dialog: MatDialog,
-    private patientService: PatientService
+    private patientService: PatientService,
+    private router: Router,
+    private storage: LocalStorageService
   ) {}
 
   openFormModal(patient?: Patient | undefined): void {
@@ -59,5 +63,10 @@ export class PatientsComponent {
         tap(() => this.listDataDirective.update())
       )
       .subscribe(() => console.log('Paciente excluído!'));
+  }
+
+  onDetail(patient: Patient): void {
+    this.storage.setData('data-patient', patient);
+    this.router.navigateByUrl(`home/patients/details/${patient.id}`);
   }
 }
