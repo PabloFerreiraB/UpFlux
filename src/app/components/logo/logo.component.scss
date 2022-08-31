@@ -1,0 +1,20 @@
+@import "src/styles/variables";
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+
+  &__up {
+    font-weight: 800;
+    color: $color-primary-dark;
+  }
+
+  &__flux {
+    font-weight: 400;
+    color: $color-primary;
+  }
+}
+
+.logo--white {
+  color: $color-white;
+}

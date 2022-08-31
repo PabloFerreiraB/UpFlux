@@ -1,0 +1,35 @@
+@import "src/styles/variables";
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-content {
+    border: 1px solid $color-border;
+    padding: 2em;
+    border-radius: 12px;
+    width: 380px;
+  }
+}
+
+.welcome {
+  font-family: "Montserrat", sans-serif;
+  line-height: 37px;
+  font-weight: 600;
+  font-size: 30px;
+  color: $color-black;
+  margin: 5px 0 28px 0;
+}
