@@ -1,0 +1,18 @@
+<h1 class="ui-title">Lista de Pacientes</h1>
+
+<div class="new-patient">
+  <button color="primary" mat-raised-button (click)="openFormModal()">
+    Adicionar paciente
+  </button>
+</div>
+
+<div class="ui-table-container" appListData #appListData="appListData">
+  <app-filter-table [searchParams]="appListData.searchParams">
+  </app-filter-table>
+
+  <app-table
+    [patients]="appListData.dataSource$ | async"
+    (edit)="openFormModal($event)"
+    (delete)="openDeleteModal($event)"
+  ></app-table>
+</div>

@@ -1,0 +1,54 @@
+<div class="ui-modal">
+  <h1 mat-dialog-title>{{ patient ? "Editar" : "Adicionar" }} paciente</h1>
+
+  <div mat-dialog-content>
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form__row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input required matInput formControlName="name" name="name" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Usuário</mat-label>
+          <input required matInput formControlName="username" name="username" />
+        </mat-form-field>
+      </div>
+
+      <div class="form__row">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input
+            required
+            matInput
+            placeholder="E-mail"
+            formControlName="email"
+            name="email"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="ui-modal__actions">
+        <button
+          id="save"
+          color="primary"
+          mat-raised-button
+          class="form-submit"
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Salvar
+        </button>
+        <button
+          id="cancel"
+          type="button"
+          color="secondary"
+          mat-raised-button
+          (click)="cancel()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

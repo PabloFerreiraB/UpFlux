@@ -6,7 +6,18 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'patients',
+      },
+      {
+        path: 'patients',
+        loadChildren: () =>
+          import('../patients/patients.module').then((m) => m.PatientsModule),
+      },
+    ],
   },
 ];
 

@@ -1,0 +1,40 @@
+<ng-container [formGroup]="filterForm">
+  <div class="ui-table-header">
+    <div class="ui-table-header__filter">
+      <div class="ui-table-header__search-input">
+        <input
+          type="text"
+          matInput
+          formControlName="name_like"
+          placeholder="Pesquisar por usuário"
+        />
+        <mat-icon>search</mat-icon>
+      </div>
+      <button
+        class="ui-table-header__btn-filters"
+        [ngClass]="{ 'ui-table-header__btn-filters--active': showFilters }"
+        (click)="toggleFilters()"
+      >
+        <mat-icon>settings_input_component</mat-icon>
+        <span>Filtrar por E-mail</span>
+      </button>
+    </div>
+    <mat-paginator
+      [pageSizeOptions]="pageSizeOptions"
+      [pageSize]="searchParams._limit"
+      [length]="total$ | async"
+      (page)="pageChange.emit($event)"
+    ></mat-paginator>
+  </div>
+
+  <div class="ui-table-filters" *ngIf="showFilters" [@fade]>
+    <mat-form-field appearance="legacy">
+      <input
+        type="text"
+        matInput
+        placeholder="E-mail"
+        formControlName="email_like"
+      />
+    </mat-form-field>
+  </div>
+</ng-container>
