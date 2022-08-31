@@ -8,13 +8,6 @@
     </div>
   </div>
 
-  <button
-    id="back"
-    type="button"
-    color="secondary"
-    mat-raised-button
-    onclick="history.back()"
-  >
-    < Voltar para listagem
-  </button>
+  <app-button [buttonConfig]="buttonConfig" onclick="history.back()">
+  </app-button>
 </div>
