@@ -12,6 +12,7 @@ import { PatientService } from 'src/app/services/patient/patient.service';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/core/storage/services/local-storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-patients',
@@ -44,7 +45,8 @@ export class PatientsComponent {
     private dialog: MatDialog,
     private patientService: PatientService,
     private router: Router,
-    private storage: LocalStorageService
+    private storage: LocalStorageService,
+    private toastrService: ToastrService
   ) {}
 
   openFormModal(patient?: Patient | undefined): void {
@@ -63,7 +65,17 @@ export class PatientsComponent {
         }),
         tap(() => this.listDataDirective.update())
       )
-      .subscribe(() => console.log('Paciente salvo!'));
+      .subscribe({
+        next: () => {
+          patient
+            ? this.toastrService.success('Paciente alterado com sucesso.')
+            : this.toastrService.success('Paciente criado com sucesso.');
+        },
+        error: () =>
+          this.toastrService.error(
+            'Ocorreu um erro. Por favor, tente novamente.'
+          ),
+      });
   }
 
   openDeleteModal(patient: Patient): void {
@@ -80,7 +92,15 @@ export class PatientsComponent {
         ),
         tap(() => this.listDataDirective.update())
       )
-      .subscribe(() => console.log('Paciente excluído!'));
+      .subscribe({
+        next: () => {
+          this.toastrService.success('Paciente excluído com sucesso.');
+        },
+        error: () =>
+          this.toastrService.error(
+            'Ocorreu um erro. Por favor, tente novamente.'
+          ),
+      });
   }
 
   onDetail(patient: Patient): void {

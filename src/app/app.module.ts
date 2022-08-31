@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -13,6 +15,7 @@ import { CoreModule } from './core/core.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

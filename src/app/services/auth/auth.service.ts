@@ -24,7 +24,7 @@ export class AuthService {
         if (user) {
           return user;
         }
-        throw new Error('Usuário ou senha inválidos');
+        throw 'Usuário ou senha inválidos.';
       }),
       tap((user) => this.authUserStore.setUser(user)),
       tap((user) => this._saveUserToStorage(user))
