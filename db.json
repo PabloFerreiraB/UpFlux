@@ -1,0 +1,15 @@
+{
+  "tasks": [{
+    "id": 1,
+    "name": "Pablo Ferreira",
+    "username": "pabloferreira",
+    "email": "pablo_ferreira14@hotmail.com",
+    "date": "2022-07-01T05:53:20Z"
+  }],
+  "account": [{
+    "id": 0,
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin"
+  }]
+}
