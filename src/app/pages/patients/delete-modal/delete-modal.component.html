@@ -1,0 +1,29 @@
+<div class="ui-modal">
+  <h1 mat-dialog-title>Excluir paciente</h1>
+  <div mat-dialog-content>
+    <div class="data">
+      <span>Nome: {{ patient.name }}</span>
+      <span>Usuário: {{ patient.username }}</span>
+    </div>
+    <div class="ui-modal__actions">
+      <button
+        id="delete"
+        color="primary"
+        mat-raised-button
+        class="form-submit"
+        (click)="delete()"
+      >
+        Excluir
+      </button>
+      <button
+        id="cancel"
+        type="button"
+        color="secondary"
+        mat-raised-button
+        (click)="cancel()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { FormModalModule } from './form-modal/form-modal.module';
 import { ListDataModule } from 'src/app/shared/list-data/list-data.module';
 
 import { PatientService } from 'src/app/services/patient/patient.service';
+import { DeleteModalModule } from './delete-modal/delete-modal.module';
 
 @NgModule({
   declarations: [PatientsComponent],
@@ -19,6 +20,7 @@ import { PatientService } from 'src/app/services/patient/patient.service';
     TableModule,
     FilterTableModule,
     FormModalModule,
+    DeleteModalModule,
     ListDataModule.forRoot(PatientService),
   ],
 })

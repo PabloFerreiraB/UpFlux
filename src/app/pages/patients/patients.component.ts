@@ -9,6 +9,7 @@ import { ListDataDirective } from 'src/app/shared/list-data/directives/list-data
 
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { PatientService } from 'src/app/services/patient/patient.service';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-patients',
@@ -40,23 +41,23 @@ export class PatientsComponent {
         }),
         tap(() => this.listDataDirective.update())
       )
-      .subscribe(() => console.log('Pagamento salvo!'));
+      .subscribe(() => console.log('Paciente salvo!'));
   }
 
   openDeleteModal(patient: Patient): void {
-    // const dialogRef = this.dialog.open(PaymentDeleteModalComponent, {
-    //   data: patient,
-    //   width: '450px',
-    // });
-    // dialogRef
-    //   .afterClosed()
-    //   .pipe(
-    //     filter(Boolean),
-    //     switchMap((paymentToDelete: Patient) =>
-    //       this.paymentApiService.delete(paymentToDelete.id)
-    //     ),
-    //     tap(() => this.listDataDirective.update())
-    //   )
-    //   .subscribe(() => this.messageService.open('Pagamento excluído!'));
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      data: patient,
+      width: '450px',
+    });
+    dialogRef
+      .afterClosed()
+      .pipe(
+        filter(Boolean),
+        switchMap((patientToSave: Patient) =>
+          this.patientService.delete(patientToSave.id)
+        ),
+        tap(() => this.listDataDirective.update())
+      )
+      .subscribe(() => console.log('Paciente excluído!'));
   }
 }

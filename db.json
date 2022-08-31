@@ -2,16 +2,10 @@
   "tasks": [
     {
       "id": 1,
-      "name": "Pablo Ferreira",
+      "name": "Pablo Ferreira Branzan",
       "username": "pabloferreira",
       "email": "pablo_ferreira14@hotmail.com",
       "date": "2022-07-01T05:53:20Z"
-    },
-    {
-      "name": "Juliana Barretto",
-      "username": "julianab",
-      "email": "juliana@hotmail.com",
-      "id": 2
     }
   ],
   "account": [
