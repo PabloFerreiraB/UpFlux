@@ -11,6 +11,7 @@ import { ListDataModule } from 'src/app/shared/list-data/list-data.module';
 
 import { PatientService } from 'src/app/services/patient/patient.service';
 import { DeleteModalModule } from './delete-modal/delete-modal.module';
+import { ButtonModule } from 'src/app/shared/components/button/button.module';
 
 @NgModule({
   declarations: [PatientsComponent],
@@ -21,6 +22,7 @@ import { DeleteModalModule } from './delete-modal/delete-modal.module';
     FilterTableModule,
     FormModalModule,
     DeleteModalModule,
+    ButtonModule,
     ListDataModule.forRoot(PatientService),
   ],
 })

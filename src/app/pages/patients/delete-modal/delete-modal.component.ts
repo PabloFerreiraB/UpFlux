@@ -10,16 +10,53 @@ import { Patient } from 'src/app/models/patient.interface';
   styleUrls: ['./delete-modal.component.scss'],
 })
 export class DeleteModalComponent {
+  buttonConfig = [
+    {
+      styles: {
+        cursor: 'pointer',
+        position: 'relative',
+        backgroundColor: '#F5F5F5',
+        color: '#333333',
+        fontFamily: 'Roboto',
+        fontSize: '14px',
+        fontWeight: '500',
+        lineHeight: '16px',
+        borderRadius: '4px',
+        border: 'none',
+        padding: '10px 15px',
+        marginTop: '4px',
+        width: '150px',
+      },
+      text: 'cancelar',
+    },
+    {
+      styles: {
+        cursor: 'pointer',
+        position: 'relative',
+        backgroundColor: '#007dfe',
+        color: '#fff',
+        fontFamily: 'Roboto',
+        fontSize: '14px',
+        fontWeight: '500',
+        lineHeight: '16px',
+        borderRadius: '4px',
+        border: 'none',
+        padding: '10px 15px',
+        marginTop: '4px',
+        width: '150px',
+      },
+      text: 'confirmar',
+    },
+  ];
+
   constructor(
     public dialogRef: MatDialogRef<DeleteModalComponent>,
     @Inject(MAT_DIALOG_DATA) public patient: Patient
   ) {}
 
-  delete(): void {
-    this.dialogRef.close(this.patient);
-  }
+  onAction(index: number): void {
+    if (index === 0) return this.dialogRef.close();
 
-  cancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(this.patient);
   }
 }

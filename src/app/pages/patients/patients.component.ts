@@ -22,6 +22,24 @@ export class PatientsComponent {
   @ViewChild(ListDataDirective, { static: true })
   listDataDirective!: ListDataDirective<Patient>;
 
+  buttonConfig = {
+    styles: {
+      cursor: 'pointer',
+      position: 'relative',
+      backgroundColor: '#007dfe',
+      color: '#fff',
+      fontFamily: 'Roboto',
+      fontSize: '14px',
+      fontWeight: '500',
+      lineHeight: '16px',
+      borderRadius: '4px',
+      border: 'none',
+      padding: '10px 15px',
+      width: '230px',
+    },
+    text: 'Adicionar paciente',
+  };
+
   constructor(
     private dialog: MatDialog,
     private patientService: PatientService,
@@ -31,7 +49,7 @@ export class PatientsComponent {
 
   openFormModal(patient?: Patient | undefined): void {
     const dialogRef = this.dialog.open(FormModalComponent, {
-      width: '900px',
+      width: '605px',
       data: patient,
     });
     dialogRef
@@ -51,7 +69,7 @@ export class PatientsComponent {
   openDeleteModal(patient: Patient): void {
     const dialogRef = this.dialog.open(DeleteModalComponent, {
       data: patient,
-      width: '450px',
+      width: '405px',
     });
     dialogRef
       .afterClosed()

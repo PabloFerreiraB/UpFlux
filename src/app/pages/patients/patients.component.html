@@ -1,9 +1,8 @@
 <h1 class="ui-title">Lista de Pacientes</h1>
 
 <div class="new-patient">
-  <button color="primary" mat-raised-button (click)="openFormModal()">
-    Adicionar paciente
-  </button>
+  <app-button [buttonConfig]="buttonConfig" (clickEmitter)="openFormModal()">
+  </app-button>
 </div>
 
 <div class="ui-table-container" appListData #appListData="appListData">

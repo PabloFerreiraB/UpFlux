@@ -1,20 +1,6 @@
 {
   "patients": [
     {
-      "id": 2,
-      "name": "Pablo Ferreira DDDDD",
-      "username": "pabloferreiraDDD",
-      "email": "pablo_ferreira@hotmail.com",
-      "date": "2022-07-01T05:53:20Z"
-    },
-    {
-      "id": 3,
-      "name": "Pablo Ferreira Branzan",
-      "username": "pabloferreira",
-      "email": "pablo_ferreira14@hotmail.com",
-      "date": "2022-07-01T05:53:20Z"
-    },
-    {
       "id": 4,
       "name": "Pablo Ferreira Branzan",
       "username": "pabloferreira",
