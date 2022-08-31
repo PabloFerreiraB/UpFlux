@@ -2,16 +2,53 @@
   <h1 mat-dialog-title>{{ patient ? "Editar" : "Adicionar" }} paciente</h1>
 
   <div mat-dialog-content>
-    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <form class="form" [formGroup]="form">
       <div class="form__row">
         <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
-          <input required matInput formControlName="name" name="name" />
+          <input
+            required
+            matInput
+            formControlName="name"
+            name="name"
+            placeholder="Nome"
+          />
+          <mat-error
+            id="name-required"
+            *ngIf="form.controls['name'].hasError('required')"
+            >Nome é obrigatório
+          </mat-error>
+          <mat-error
+            id="name-minlength"
+            *ngIf="form.controls['name'].hasError('minlength')"
+            >Nome deve possuir no mínimo 3 caracteres</mat-error
+          >
+          <mat-error
+            id="name-maxlength"
+            *ngIf="form.controls['name'].hasError('maxlength')"
+            >Nome deve possuir no máximo 40 caracteres</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Usuário</mat-label>
-          <input required matInput formControlName="username" name="username" />
+          <input
+            required
+            matInput
+            formControlName="username"
+            name="username"
+            placeholder="Usuário"
+          />
+          <mat-error
+            id="name-required"
+            *ngIf="form.controls['username'].hasError('required')"
+            >Usuário é obrigatório
+          </mat-error>
+          <mat-error
+            id="name-minlength"
+            *ngIf="form.controls['username'].hasError('minlength')"
+            >Usuário deve possuir no mínimo 3 caracteres</mat-error
+          >
         </mat-form-field>
       </div>
 
@@ -25,29 +62,25 @@
             formControlName="email"
             name="email"
           />
+
+          <mat-error
+            id="name-required"
+            *ngIf="form.controls['email'].hasError('required')"
+            >E-mail é obrigatório
+          </mat-error>
         </mat-form-field>
       </div>
 
-      <div class="ui-modal__actions">
-        <button
-          id="save"
-          color="primary"
-          mat-raised-button
-          class="form-submit"
-          type="submit"
-          [disabled]="form.invalid"
-        >
-          Salvar
-        </button>
-        <button
-          id="cancel"
-          type="button"
-          color="secondary"
-          mat-raised-button
-          (click)="cancel()"
-        >
-          Cancelar
-        </button>
+      <!-- Botões -->
+      <div class="buttons">
+        <ng-container *ngFor="let button of buttonConfig; index as i">
+          <app-button
+            [disabled]="i === 1 && form.invalid"
+            [buttonConfig]="button"
+            (clickEmitter)="onAction(i)"
+          >
+          </app-button>
+        </ng-container>
       </div>
     </form>
   </div>
