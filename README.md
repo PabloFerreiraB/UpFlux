@@ -1,27 +1,28 @@
-# ProjectTest
+## **Como Rodar?**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+- Instale as dependências usando o comando `npm install`
+- Na raiz do repositório, rode este comando `ng serve` para iniciar o servidor de desenvolvimento.
+- A Aplicação estará disponível na porta `http://localhost:4200/`
 
-## Development server
+<br/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### **API**
 
-## Code scaffolding
+Utilizei um mock de API, chamado JSON Server. Portanto, é necessário que você instale-o globalmente em sua máquina para ter os recursos da lib.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Os dados estão armazenados no arquivo `db.json` na raiz do projeto.
 
-## Build
+1 - Como instalar? <br/>
+`npm install -g json-server`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2 - Para rodar (deixar aberto em uma outra aba do terminal, para que ele fique escutando suas ações), digite o seguinte comando na RAÍZ do projeto: `npm run api`
 
-## Running unit tests
+Link para mais detalhes: https://github.com/typicode/json-server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<br/>
 
-## Running end-to-end tests
+## Usuário para utilizar no login:<br />
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+` "email": "admin@gmail.com", "password": "administrator"`
+<br/>
+<br/>

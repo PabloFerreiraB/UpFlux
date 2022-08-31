@@ -1,32 +1,14 @@
 {
-  "patients": [
-    {
-      "id": 4,
-      "name": "asdasdasd",
-      "username": "pabloferreira",
-      "email": "pablo_ferreira14@hotmail.com",
-      "date": "2022-07-01T05:53:20Z"
-    },
-    {
-      "id": 5,
-      "name": "Pablo Ferreira Branzan",
-      "username": "pabloferreira",
-      "email": "pablo_ferreira14@hotmail.com",
-      "date": "2022-07-01T05:53:20Z"
-    },
-    {
-      "name": "teste",
-      "username": "teste",
-      "email": "pablofb1014@gmail.com",
-      "id": 6
-    }
-  ],
-  "account": [
-    {
-      "id": 0,
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "password": "administrator"
-    }
-  ]
+  "patients": [{
+    "id": 1,
+    "name": "Pablo Ferreira Branzan",
+    "username": "pabloferreira",
+    "email": "pablo_ferreira14@hotmail.com"
+  }],
+  "account": [{
+    "id": 0,
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "administrator"
+  }]
 }

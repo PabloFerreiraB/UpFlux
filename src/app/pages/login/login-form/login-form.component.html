@@ -1,9 +1,9 @@
 <form class="form" [formGroup]="form">
   <mat-form-field appearance="outline">
-    <mat-label>Email</mat-label>
+    <mat-label>E-mail</mat-label>
     <input
       matInput
-      placeholder="Email"
+      placeholder="E-mail"
       formControlName="email"
       name="email"
       type="email"
@@ -12,12 +12,12 @@
     <mat-error
       id="email-required"
       *ngIf="form.controls['email'].hasError('required')"
-      >Email é obrigatório</mat-error
+      >E-mail é obrigatório</mat-error
     >
     <mat-error
       id="email-invalid"
       *ngIf="form.controls['email'].hasError('email')"
-      >Email inválido</mat-error
+      >E-mail inválido</mat-error
     >
   </mat-form-field>
 

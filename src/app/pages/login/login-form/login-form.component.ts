@@ -39,22 +39,13 @@ export class LoginFormComponent implements OnInit {
 
   buildForm(): void {
     this.form = this.formBuilder.group({
-      email: ['admin@gmail.com', [Validators.required, Validators.email]],
-      password: [
-        'administrator',
-        [Validators.required, Validators.minLength(6)],
-      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   changePasswordVisibility(): void {
     this.hidePassword = !this.hidePassword;
-  }
-
-  submit(): void {
-    if (this.form.valid) {
-      this.submitForm.emit(this.form.value);
-    }
   }
 
   onSubmit(): void {
